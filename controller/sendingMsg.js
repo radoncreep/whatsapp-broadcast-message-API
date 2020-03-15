@@ -7,6 +7,9 @@ const authToken = process.env.AUTH_TOKEN;
 
 const client = require('twilio')(accountSid, authToken);
 
+exports.getMessagePage = (req, res, next) => {
+    res.send('Hi restful api, cld I rest now');
+}
 
 exports.postMessage = (req, res, next) => {
     const name = req.body.name;

@@ -1,6 +1,7 @@
 
 const express = require('express');
 const morgan = require('morgan');
+const cors = require('cors');
 
 const app = express();
 
@@ -9,6 +10,7 @@ const apiRoute = require('../api/routing');
 //essential middlewares
 app.use(express.json()); //bodyParser by express
 app.use(morgan('common')); //logger
+app.use(cors());
 
 //CORS
 app.use((req, res, next) => {
